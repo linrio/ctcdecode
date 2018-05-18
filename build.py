@@ -25,7 +25,7 @@ if not site_in_China:
     download_extract('https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz',
                      'third_party/boost_1_63_0.tar.gz')
 else:
-    download_extract('cn-mirror.openslr.org/resources/2/openfst-1.6.7.tar.gz',
+    download_extract('http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.6.7.tar.gz',
                      'third_party/openfst-1.6.7.tar.gz')
     download_extract('https://zh.osdn.net/projects/sfnet_boost/downloads/boost/1.63.0/boost_1_63_0.tar.gz',
                      'third_party/boost_1_63_0.tar.gz')
