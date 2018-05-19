@@ -27,7 +27,7 @@ if not site_in_China:
 else:
     download_extract('http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.6.7.tar.gz',
                      'third_party/openfst-1.6.7.tar.gz')
-    download_extract('https://zh.osdn.net/projects/sfnet_boost/downloads/boost/1.63.0/boost_1_63_0.tar.gz',
+    download_extract('https://zh.osdn.net/frs/g_redir.php?m=kent&f=boost%2Fboost%2F1.63.0%2Fboost_1_63_0.tar.gz',
                      'third_party/boost_1_63_0.tar.gz')
 
 
