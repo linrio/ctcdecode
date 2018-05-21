@@ -4,14 +4,16 @@ import glob
 import os
 import tarfile
 
-import wget
+#import wget
 from torch.utils.ffi import create_extension
 
+from urllib.request import urlretrieve
 
 def download_extract(url, dl_path):
     if not os.path.isfile(dl_path):
-        wget.download(url,
-                      out=dl_path)
+        #wget.download(url, out=dl_path)
+        file, _ = urlretrieve(url, dl_path)
+        print("downloaded: ", file)
     tar = tarfile.open(dl_path)
     tar.extractall('third_party/')
     tar.close()
