@@ -13,3 +13,13 @@ git clone --recursive https://github.com/parlance/ctcdecode.git
 cd ctcdecode
 pip install .
 ```
+## Installation for Chinese users
+The download-site of third-lib openfst and boost may not be reached easily in China, I suggest that you can replace the download-site by:
+
+
+```bash
+# get the code
+git clone --recursive -b linrio-patch-1 https://github.com/linrio/ctcdecode.git
+cd ctcdecode
+pip install .
+```

@@ -4,24 +4,35 @@ import glob
 import os
 import tarfile
 
-import wget
+#import wget
 from torch.utils.ffi import create_extension
 
+#from urllib.request import urlretrieve
+#from urllib import request
 
 def download_extract(url, dl_path):
     if not os.path.isfile(dl_path):
-        wget.download(url,
-                      out=dl_path)
+        pass
+        #wget.download(url, out=dl_path)
+        #file, _ = request.urlretrieve(url, dl_path)
+        #print("downloaded: ", file)
     tar = tarfile.open(dl_path)
     tar.extractall('third_party/')
     tar.close()
 
 
 # Download/Extract openfst, boost
-download_extract('https://sites.google.com/site/openfst/home/openfst-down/openfst-1.6.7.tar.gz',
-                 'third_party/openfst-1.6.7.tar.gz')
-download_extract('https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz',
-                 'third_party/boost_1_63_0.tar.gz')
+site_in_China = True
+if not site_in_China:
+    download_extract('https://sites.google.com/site/openfst/home/openfst-down/openfst-1.6.7.tar.gz',
+                     'third_party/openfst-1.6.7.tar.gz')
+    download_extract('https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz',
+                     'third_party/boost_1_63_0.tar.gz')
+else:
+    download_extract('http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.6.7.tar.gz',
+                     'third_party/openfst-1.6.7.tar.gz')
+    download_extract('https://dl.bintray.com/boostorg/release/1.63.0/source/boost_1_63_0.tar.gz',
+                     'third_party/boost_1_63_0.tar.gz')
 
 
 # Does gcc compile with this header and library?
